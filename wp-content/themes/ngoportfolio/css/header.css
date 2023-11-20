@@ -1,0 +1,86 @@
+/* Styling the navigation menu */
+#site-navigation {
+    background-color: #333; /* Change the background color as needed */
+    padding: 15px 0; /* Adjust the padding to space the menu items */
+}
+
+#site-navigation .menu-toggle,
+#site-navigation .menu-item {
+    display: inline-block;
+    margin: 0 15px; /* Adjust the margin to space menu items */
+}
+
+#site-navigation .menu-toggle {
+    display: none; /* Hide the menu toggle button */
+}
+
+#site-navigation a {
+    color: #fff; /* Text color for menu items */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+#site-navigation a:hover {
+    color: #ffcc00; /* Change text color on hover */
+}
+
+/* Media query for mobile responsiveness */
+@media screen and (max-width: 768px) {
+    #site-navigation .menu-item {
+        display: block;
+        margin: 10px 0; /* Adjust margin for mobile view */
+    }
+
+    #site-navigation .menu-toggle {
+        display: block; /* Display menu toggle button */
+    }
+
+    #site-navigation .main-navigation ul {
+        display: none; /* Hide menu on mobile by default */
+    }
+
+    #site-navigation .toggled-on ul {
+        display: block; /* Show menu when toggle is active */
+    }
+}
+/* image */
+.image-with-text {
+    position: relative;
+    text-align: center;
+    height: 100vh; /* Set the image container to take up the full viewport height */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.image-with-text img {
+    width: 100%;
+    height: 100%; /* Ensure the image fills the entire container */
+    object-fit: cover; /* Scale the image while maintaining aspect ratio */
+    object-position: center; /* Center the image */
+    filter: brightness(50%); /* Reduce the image brightness */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff; /* Text color */
+}
+
+.overlay-text .top-text {
+    font-size: 15px; /* Font size for the top text */
+    margin-bottom: 30px; /* Space between top text and main title */
+}
+
+.overlay-text h1 {
+    margin: 0;
+    font-size: 65px; /* Font size for the main title */
+}
+
+.overlay-text p {
+    margin-top: 20px;
+    font-size: 24px; /* Font size for the description */
+}
+
