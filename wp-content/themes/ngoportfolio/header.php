@@ -60,6 +60,9 @@
 					)
 				);
 				?>
+				<div class="donate-button">
+					<a href="#" class="btn-donate">Donate</a>
+				</div>
 			</div>
 		</nav>
 

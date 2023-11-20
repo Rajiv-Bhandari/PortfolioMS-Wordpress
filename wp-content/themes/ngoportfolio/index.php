@@ -23,8 +23,20 @@ get_header();
 	</div>
 </div>
 	<main id="primary" class="site-main">
-		
+		<div class="container" style="margin-top:60px;">
+			<div class="row align-items-center">
+				<div class="col-md-4">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/child-labor.jpg" alt="Child Labour" class="img-fluid">
+				</div>
+				<div class="col-md-8">
+					<h1>Empower Nepal: Building Hope, Changing Lives</h1>
+					<p>Empower Nepal is committed to uplifting Himalayan communities, addressing the challenges faced by suffering children, and combating child labor. Our initiatives in education, healthcare, and community development aim to eradicate the root causes of poverty, provide a haven for at-risk youth, and pave the path toward a brighter future. With a focus on ending child labor and ensuring access to quality education, we strive to create a world where every child in Nepal can thrive and reach their full potential.</p>
+					<a href="<?php echo get_template_directory_uri(); ?>/pages/childlabour.php" class="btn btn-primary">Read More</a>
+				</div>
+			</div>
+		</div>
 	</main>
+
 
 <?php
 // get_sidebar();

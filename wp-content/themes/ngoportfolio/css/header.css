@@ -44,6 +44,24 @@
         display: block; /* Show menu when toggle is active */
     }
 }
+.container {
+    position: relative;
+}
+
+.donate-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -8px; 
+}
+
+.btn-donate {
+    padding: 8px 20px;
+    background-color: #ff0000; /* Change to your desired button color */
+    color: #ffffff; /* Change to your desired button text color */
+    text-decoration: none;
+    border-radius: 4px;
+}
 /* image */
 .image-with-text {
     position: relative;
