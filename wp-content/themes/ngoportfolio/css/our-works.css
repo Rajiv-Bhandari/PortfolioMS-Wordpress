@@ -1,0 +1,25 @@
+/* our-works.css */
+
+.our-works-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.work-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.work-box {
+    width: calc(30% - 5px); /* Adjust the width as needed */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.work-box img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}

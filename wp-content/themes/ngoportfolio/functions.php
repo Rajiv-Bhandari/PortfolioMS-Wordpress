@@ -185,3 +185,8 @@ function enqueue_about_us_styles() {
     wp_enqueue_style( 'about-us-style', get_template_directory_uri() . '/css/about-us.css' );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_about_us_styles' );
+
+function enqueue_our_works_styles() {
+    wp_enqueue_style('our-works-style', get_template_directory_uri() . '/css/our-works.css');
+}
+add_action('wp_enqueue_scripts', 'enqueue_our_works_styles');
