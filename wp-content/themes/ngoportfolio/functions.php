@@ -180,3 +180,8 @@ function enqueue_header_styles() {
     wp_enqueue_style( 'header-styles', get_stylesheet_directory_uri() . '/css/header.css' );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_header_styles' );
+
+function enqueue_about_us_styles() {
+    wp_enqueue_style( 'about-us-style', get_template_directory_uri() . '/css/about-us.css' );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_about_us_styles' );
