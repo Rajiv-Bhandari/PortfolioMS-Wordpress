@@ -1,0 +1,41 @@
+/* health.css */
+
+.health-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.health-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.health-images {
+    width: 45%; /* Adjust as needed */
+}
+
+.health-images .image {
+    margin-bottom: 20px;
+}
+
+.health-images img {
+    max-width: 100%;
+    height: auto;
+}
+
+.health-description {
+    width: 45%; /* Adjust as needed */
+}
+
+.description-text {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.health-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
