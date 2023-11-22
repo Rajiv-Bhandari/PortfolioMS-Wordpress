@@ -6,6 +6,7 @@
 get_header();
 ?>
 
-<h1>this is gallery page</h1>
+<h1>this is gallery</h1>
+
 
 <?php get_footer(); ?>

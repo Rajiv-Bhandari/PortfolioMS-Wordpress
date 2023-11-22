@@ -31,7 +31,7 @@ get_header();
 				<div class="col-md-8">
 					<h1>Empower Nepal: Building Hope, Changing Lives</h1>
 					<p>Empower Nepal is committed to uplifting Himalayan communities, addressing the challenges faced by suffering children, and combating child labor. Our initiatives in education, healthcare, and community development aim to eradicate the root causes of poverty, provide a haven for at-risk youth, and pave the path toward a brighter future. With a focus on ending child labor and ensuring access to quality education, we strive to create a world where every child in Nepal can thrive and reach their full potential.</p>
-					<a href="<?php echo get_template_directory_uri(); ?>/pages/childlabour.php" class="btn btn-primary">Read More</a>
+					<a href="<?php echo esc_url(get_permalink(get_page_by_path('read-more'))); ?>" class="btn btn-primary">Read More</a>
 				</div>
 			</div>
 		</div>
