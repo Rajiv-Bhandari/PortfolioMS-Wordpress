@@ -7,7 +7,7 @@ get_header();
 ?>
 
 <div class="our-works-container">
-    <h1>Our Work</h1>
+    <h1>Our Works</h1>
     <div class="work-boxes">
         <div class="work-box">
             <a href="<?php echo esc_url(get_permalink(get_page_by_path('health'))); ?>">
