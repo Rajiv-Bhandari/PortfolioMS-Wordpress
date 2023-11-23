@@ -195,3 +195,8 @@ function enqueue_custom_health_styles() {
     wp_enqueue_style('health-styles', get_template_directory_uri() . '/css/health.css');
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_health_styles');
+
+function enqueue_contact_form_styles() {
+    wp_enqueue_style('contact-form-styles', get_template_directory_uri() . '/css/contact-form.css');
+}
+add_action('wp_enqueue_scripts', 'enqueue_contact_form_styles');
