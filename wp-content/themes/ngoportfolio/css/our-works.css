@@ -1,6 +1,6 @@
 .our-works-container {
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 90%; /* Set the container to 90% of the width */
+    margin: 0 auto; /* Center the container */
     padding: 20px;
 }
 
@@ -8,21 +8,28 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 20px; /* Add gap between the work boxes */
+    margin: 0 -10px; /* Add negative margin to compensate for outer gaps */
 }
 
 .work-box {
-    width: calc(30% - 5px); /* Adjust the width as needed */
+    width: calc(22.5% - 20px); /* Adjust the width considering both width and margins */
     margin-bottom: 20px;
     text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    flex: 0 0 calc(22.5% - 20px); /* Ensure proper width within flex container */
 }
 
-.work-box img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-.work-title {
-    text-align: center; /* Adjust alignment as needed */
-    margin-top: 10px; /* Adjust spacing between image and title */
-    font-weight: bold; /* Add desired font styles */
+/* Add media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .our-works-container {
+        max-width: 90%;
+    }
+
+    .work-box {
+        width: calc(45% - 20px); /* Adjust width for smaller screens */
+        flex: 0 0 calc(45% - 20px); /* Ensure proper width within flex container */
+    }
 }

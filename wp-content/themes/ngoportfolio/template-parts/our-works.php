@@ -20,18 +20,19 @@ get_header();
             while ($our_works_query->have_posts()) :
                 $our_works_query->the_post();
         ?>
-                
-                    <div class="work-box">
-                        <?php $image = get_field('thumbnail'); ?>
-                        <?php if ($image) : ?>
-                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                        <?php endif; ?>
-                        <div class="work-title">
-                            <p><?php the_field('title'); ?></p>
-                        </div>
+            
+                <div class="work-box">
+                    <a href="<?php the_permalink(); ?>" class="work-box-link">
+                    <?php $image = get_field('thumbnail'); ?>
+                    <?php if ($image) : ?>
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                    <?php endif; ?>
+                    <div class="work-title">
+                        <p><?php the_field('title'); ?></p>
                     </div>
-                   
-              
+                    </a>
+                </div>
+           
         <?php
             endwhile;
             wp_reset_postdata();
