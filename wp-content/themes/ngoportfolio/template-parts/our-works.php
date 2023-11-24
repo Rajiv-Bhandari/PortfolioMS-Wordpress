@@ -8,11 +8,11 @@ get_header();
 
 <div class="our-works-container">
     <h1>Our Works</h1>
-
-    <div class="works-grid">
+    
+    <div class="work-boxes">
         <?php
         $our_works_query = new WP_Query(array(
-            'post_type' => 'our_works',
+            'post_type' => 'our-work',
             'posts_per_page' => -1,
         ));
 
@@ -20,21 +20,18 @@ get_header();
             while ($our_works_query->have_posts()) :
                 $our_works_query->the_post();
         ?>
-                <div class="single-our-work">
-                    <div class="thumbnail">
+                
+                    <div class="work-box">
                         <?php $image = get_field('thumbnail'); ?>
                         <?php if ($image) : ?>
                             <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
                         <?php endif; ?>
+                        <div class="work-title">
+                            <p><?php the_field('title'); ?></p>
+                        </div>
                     </div>
-                    <div class="work-details">
-                        <h2><?php the_title(); ?></h2>
-                        <!-- Add more fields as needed -->
-                        <!-- <div class="description">
-                            <?php the_field('description'); ?>
-                        </div> -->
-                    </div>
-                </div>
+                   
+              
         <?php
             endwhile;
             wp_reset_postdata();

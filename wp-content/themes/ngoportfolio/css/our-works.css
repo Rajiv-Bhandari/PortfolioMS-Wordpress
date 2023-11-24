@@ -1,24 +1,28 @@
-/* Adjust width and margins for responsiveness */
 .our-works-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.work-boxes {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 -10px; /* Adjust margin to create space between items */
 }
 
-.single-our-work {
-    flex: 0 0 calc(33.33% - 20px); /* Three images in a row with margin */
-    margin: 10px;
+.work-box {
+    width: calc(30% - 5px); /* Adjust the width as needed */
+    margin-bottom: 20px;
     text-align: center;
 }
 
-.single-our-work img {
+.work-box img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
 }
-
-.single-our-work h2 {
-    font-size: 18px;
-    margin-bottom: 5px;
+.work-title {
+    text-align: center; /* Adjust alignment as needed */
+    margin-top: 10px; /* Adjust spacing between image and title */
+    font-weight: bold; /* Add desired font styles */
 }

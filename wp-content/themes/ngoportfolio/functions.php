@@ -186,10 +186,7 @@ function enqueue_about_us_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_about_us_styles' );
 
-function enqueue_our_works_styles() {
-    wp_enqueue_style('our-works-style', get_template_directory_uri() . '/css/our-works.css');
-}
-add_action('wp_enqueue_scripts', 'enqueue_our_works_styles');
+
 
 function enqueue_custom_health_styles() {
     wp_enqueue_style('health-styles', get_template_directory_uri() . '/css/health.css');
@@ -201,17 +198,9 @@ function enqueue_contact_form_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_contact_form_styles');
 
-// custom post named Our Works
 
-function create_our_works_post_type() {
-    register_post_type('our_works', array(
-        'labels' => array(
-            'name' => 'Our Works',
-            'singular_name' => 'Our Work',
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
-    ));
+
+function enqueue_our_works_styles() {
+    wp_enqueue_style('our-works-style', get_template_directory_uri() . '/css/our-works.css');
 }
-add_action('init', 'create_our_works_post_type');
+add_action('wp_enqueue_scripts', 'enqueue_our_works_styles');
