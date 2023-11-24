@@ -200,3 +200,18 @@ function enqueue_contact_form_styles() {
     wp_enqueue_style('contact-form-styles', get_template_directory_uri() . '/css/contact-form.css');
 }
 add_action('wp_enqueue_scripts', 'enqueue_contact_form_styles');
+
+// custom post named Our Works
+
+function create_our_works_post_type() {
+    register_post_type('our_works', array(
+        'labels' => array(
+            'name' => 'Our Works',
+            'singular_name' => 'Our Work',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+    ));
+}
+add_action('init', 'create_our_works_post_type');
