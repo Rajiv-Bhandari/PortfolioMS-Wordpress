@@ -1,0 +1,39 @@
+.custom-post-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content horizontally */
+    width: 90%; /* Adjust the container width */
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center; /* Center align the entire content */
+}
+
+.custom-post-image {
+    flex: 0 0 70%; /* Adjust the image width */
+    margin-bottom: 20px; /* Add space between image and description */
+}
+
+.custom-post-image img {
+    max-width: 100%; /* Fix the image size */
+    height: auto;
+    display: block; /* Ensure image behaves responsively */
+    margin: 0 auto; /* Center the image */
+}
+
+.custom-post-description {
+    flex: 0 0 100%; /* Adjust the description width */
+    text-align: left; /* Align the description to the left */
+}
+
+.custom-post-description h2 {
+    font-size: 24px; /* Adjust title size */
+    margin-bottom: 10px; /* Add space below title */
+    text-align: center; /* Center align the title */
+}
+
+.custom-post-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-size: 28px; /* Adjust title size */
+    font-weight: bold; /* Emphasize title */
+}
