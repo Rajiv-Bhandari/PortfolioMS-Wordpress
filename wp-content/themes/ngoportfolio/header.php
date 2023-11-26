@@ -61,7 +61,7 @@
 				);
 				?>
 				<div class="donate-button">
-					<a href="#" class="btn-donate">Donate</a>
+					<a href="https://www.paypal.com/donate/?hosted_button_id=CDMXBEVUA7FE2" target="_blank">Donate via PayPal</a>
 				</div>
 			</div>
 		</nav>
