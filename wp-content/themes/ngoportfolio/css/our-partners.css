@@ -1,20 +1,26 @@
 .partner-list {
     margin-top: 20px;
     margin-bottom: 20px;
+    width: 80%; /* Set the container to occupy 80% of the parent's width */
+    max-width: 1100px; /* Optional: Set a maximum width for the container */
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start; /* Align items to start from the left */
     gap: 20px; /* Adjust the gap between partner items */
-    justify-content: center;
-    align-items: center;
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
 }
 
 .partner-item {
     text-align: center;
+    width: 20%; /* Set each partner item to occupy 20% of the container width */
+    padding: 0 10px; /* Add padding to space items */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 .partner-item img {
-    width: 200px; /* Set your desired width for the partner images */
-    height: auto;
+    width: 100%; /* Make the images fill the entire width of the partner item */
+    height: 200px;
     display: block;
     margin-bottom: 10px; /* Adjust margin as needed */
 }
