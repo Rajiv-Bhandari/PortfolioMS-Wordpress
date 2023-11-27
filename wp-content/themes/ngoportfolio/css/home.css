@@ -88,3 +88,34 @@
     border-radius: 4px;
     font-size: 18px;
 }
+/* our-partners */
+.partner-list {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px; /* Adjust the gap between partner items */
+    padding: 20px 0;
+    justify-content: center; /* Center items horizontally */
+    width: 80%; /* Set the container width to 80% */
+    margin: 0 auto; /* Center the container */
+}
+
+.partner-item {
+    flex: 0 0 auto;
+    width: 200px; /* Set each partner item width */
+    height: 250px; /* Set each partner item height */
+    text-align: center;
+}
+
+.partner-item img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain; /* Maintain aspect ratio while fitting the image */
+    border-radius: 8px; /* Adjust border-radius as needed */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow effect */
+}
+
+.our-partner-h1{
+    text-align: center;
+    padding: 50px;
+    padding-bottom: 10px;
+}

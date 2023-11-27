@@ -28,7 +28,9 @@ get_header();
 			</div>
 		</div>
         <div class="our-works-container">
-            <h1>Our Works</h1>
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('our-works'))); ?>">
+                <h1>Our Works</h1>
+            </a>
             
             <div class="work-boxes">
                 <?php
@@ -65,15 +67,56 @@ get_header();
         </div>
 
         <div class="full-screen-image" id="backgroundImage">
-        <div class="full-screen-image">
-            <div class="background-image">
-                <!-- This is your background image -->
+            <div class="full-screen-image">
+                <div class="background-image">
+                    <!-- This is your background image -->
+                </div>
+                <div class="overlay-text">
+                    <div class="top-text">WANT TO MAKE A DIFFERENCE?</div>
+                    <h1>Help us raise money for our humanitarian causes</h1>
+                    <a href="https://www.paypal.com/donate/?hosted_button_id=CDMXBEVUA7FE2" target="_blank" class="btn btn-primary">Donate</a>
+                </div>
             </div>
-            <div class="overlay-text">
-                <div class="top-text">WANT TO MAKE A DIFFERENCE?</div>
-                <h1>Help us raise money for our humanitarian causes</h1>
-                <a href="https://www.paypal.com/donate/?hosted_button_id=CDMXBEVUA7FE2" target="_blank" class="btn btn-primary">Donate</a>
-            </div>
+        </div>
+        <div class="our-partner-h1">
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('our-partner'))); ?>">
+                <h1>Our Partners</h1>
+            </a>
+        </div>
+
+        
+        <div class="partner-list">
+            <?php
+            $partner_query = new WP_Query(array(
+                'post_type' => 'our-partner', 
+                'posts_per_page' => 5, 
+            ));
+
+            if ($partner_query->have_posts()) :
+                while ($partner_query->have_posts()) :
+                    $partner_query->the_post();
+            ?>
+                    <div class="partner-item">
+                        <?php
+                        $image = get_field('image'); 
+                        $title = get_field('title'); 
+
+                        if ($image) :
+                        ?>
+                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                        <?php endif; ?>
+
+                        <?php if ($title) : ?>
+                            <h2><?php echo esc_html($title); ?></h2>
+                        <?php endif; ?>
+                    </div>
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            else :
+                echo 'No partners found.';
+            endif;
+            ?>
         </div>
 
 	</main>
