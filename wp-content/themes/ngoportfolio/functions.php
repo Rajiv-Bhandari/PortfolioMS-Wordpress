@@ -198,14 +198,28 @@ function enqueue_contact_form_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_contact_form_styles');
 
-
-
-function enqueue_our_works_styles() {
-    wp_enqueue_style('our-works-style', get_template_directory_uri() . '/css/our-works.css');
-}
-add_action('wp_enqueue_scripts', 'enqueue_our_works_styles');
-
 function enqueue_single_styles() {
     wp_enqueue_style('single-style', get_template_directory_uri() . '/css/single.css', array(), '1.0', 'all');
 }
 add_action('wp_enqueue_scripts', 'enqueue_single_styles');
+
+function enqueue_our_works_styles() {
+    global $post;
+
+    // Check if the current post uses the 'our-works.php' template part
+    if (strpos(get_page_template_slug($post->ID), 'template-parts/our-works.php') !== false) {
+        wp_enqueue_style('our-works-style', get_template_directory_uri() . '/css/our-works.css');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_our_works_styles');
+
+function enqueue_home_css() {
+    global $post;
+
+    // Check if the current post uses the 'home.php' template
+    if (strpos(get_page_template_slug($post->ID), 'template-parts/home.php') !== false) {
+        wp_enqueue_style('home-styles', get_template_directory_uri() . '/css/home.css', array(), '1.0', 'all');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_home_css');
+

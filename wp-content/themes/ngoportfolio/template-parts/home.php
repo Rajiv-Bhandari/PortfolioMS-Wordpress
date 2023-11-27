@@ -9,7 +9,7 @@ get_header();
 <div class="image-with-text">
 	<img src="<?php echo get_template_directory_uri(); ?>/images/backgroundimg2.jpeg" alt="Image">
 	<div class="overlay-text">
-		<div class="top-text">100+ PROJECTS ACROSS THE NEPAL</div>
+		<div class="top-text">100+ PROJECTS ACROSS NEPAL</div>
 		<h1>Youngters In Action</h1>
 		<p>We create a poverty-free existence and prioritize children's health as our commitment.</p>
 	</div>
@@ -27,10 +27,59 @@ get_header();
 				</div>
 			</div>
 		</div>
+        <div class="our-works-container">
+            <h1>Our Works</h1>
+            
+            <div class="work-boxes">
+                <?php
+                $our_works_query = new WP_Query(array(
+                    'post_type' => 'our-work',
+                    'posts_per_page' => 4,
+                ));
+
+                if ($our_works_query->have_posts()) :
+                    while ($our_works_query->have_posts()) :
+                        $our_works_query->the_post();
+                ?>
+                    
+                        <div class="work-box">
+                            <a href="<?php the_permalink(); ?>" class="work-box-link">
+                            <?php $image = get_field('thumbnail'); ?>
+                            <?php if ($image) : ?>
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                            <?php endif; ?>
+                            <div class="work-title">
+                                <p><?php the_field('title'); ?></p>
+                            </div>
+                            </a>
+                        </div>
+                
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo 'No works found.';
+                endif;
+                ?>
+            </div>
+        </div>
+
+        <div class="full-screen-image" id="backgroundImage">
+        <div class="full-screen-image">
+            <div class="background-image">
+                <!-- This is your background image -->
+            </div>
+            <div class="overlay-text">
+                <div class="top-text">WANT TO MAKE A DIFFERENCE?</div>
+                <h1>Help us raise money for our humanitarian causes</h1>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=CDMXBEVUA7FE2" target="_blank" class="btn btn-primary">Donate</a>
+            </div>
+        </div>
+
 	</main>
 
-
 <?php
+
 // get_sidebar();
 get_footer();
 ?>
