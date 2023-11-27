@@ -1,0 +1,25 @@
+.partner-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between partner items */
+    justify-content: center;
+    align-items: center;
+}
+
+.partner-item {
+    text-align: center;
+}
+
+.partner-item img {
+    width: 200px; /* Set your desired width for the partner images */
+    height: auto;
+    display: block;
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.partner-item h2 {
+    font-size: 18px; /* Adjust font size for the partner titles */
+    margin: 0;
+}

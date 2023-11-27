@@ -217,9 +217,18 @@ function enqueue_home_css() {
     global $post;
 
     // Check if the current post uses the 'home.php' template
-    if (strpos(get_page_template_slug($post->ID), 'template-parts/home.php') !== false) {
+    if (strpos(get_page_template_slug($post->ID), 'template-parts/home.php') !== false) {	
         wp_enqueue_style('home-styles', get_template_directory_uri() . '/css/home.css', array(), '1.0', 'all');
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_home_css');
+
+function enqueue_our_partner_styles() {
+    // Check if the current page uses the 'our-partners.php' template
+    if (is_page_template('template-parts/our-partners.php')) {	
+        // Enqueue the CSS file for 'our-partners.php' template
+        wp_enqueue_style('our-partners-style', get_template_directory_uri() . '/css/our-partners.css', array(), '1.0', 'all');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_our_partner_styles');
 
