@@ -40,3 +40,7 @@
 .wpcf7-form input[type="submit"]:hover {
     background-color: #286090;
 }
+.contact-header{
+    padding-left: 170px;
+    padding-top: 20px;
+}
