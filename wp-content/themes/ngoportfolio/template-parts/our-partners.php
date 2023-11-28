@@ -6,6 +6,9 @@
 get_header();
 ?>
 
+<div class="heading">
+    <h1>Our Partners</h1>
+</div>
 <div class="partner-list">
     <?php
     $partner_query = new WP_Query(array(

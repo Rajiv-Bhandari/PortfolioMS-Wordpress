@@ -83,8 +83,7 @@ get_header();
                 <h1>Our Partners</h1>
             </a>
         </div>
-
-        
+  
         <div class="partner-list">
             <?php
             $partner_query = new WP_Query(array(
@@ -115,6 +114,60 @@ get_header();
                 wp_reset_postdata();
             else :
                 echo 'No partners found.';
+            endif;
+            ?>
+        </div>
+
+        <!-- image of a boy working -->
+        <div class="motivational-image">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/boyworking.jpg" alt="Boy Working">
+            <div class="quote">
+                <p>"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work."</p>
+            </div>
+        </div>
+
+        <div class="our-partner-h1">
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('our-team'))); ?>">
+                <h1>Our Team</h1>
+            </a>
+        </div>
+        <div class="team-members">
+            <?php
+            $team_query = new WP_Query(array(
+                'post_type' => 'our-team', 
+                'posts_per_page' => 5,
+                'order' => 'ASC', // or 'DESC' for descending order
+                'orderby' => 'date', // Order by date (you can change this to another field)
+            ));
+
+            if ($team_query->have_posts()) :
+                while ($team_query->have_posts()) :
+                    $team_query->the_post();
+            ?>
+            <div class="team-member">
+                <?php
+                $image = get_field('image'); 
+                $name = get_field('name');    
+
+                if ($image) :
+                ?>
+                    <div class="team-image">
+                        <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"></a>
+                    </div>
+                <?php endif; ?>
+
+                <div class="team-details">
+                    <?php if ($name) : ?>
+                        <h2><a href="<?php the_permalink(); ?>"><?php echo esc_html($name); ?></a></h2>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            else :
+                echo 'No team members found.';
             endif;
             ?>
         </div>

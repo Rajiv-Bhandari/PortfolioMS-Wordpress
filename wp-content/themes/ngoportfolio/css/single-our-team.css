@@ -1,0 +1,43 @@
+/* Container for the single team member */
+.single-team-member {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+}
+
+/* Styles for the team member image */
+.team-member-image {
+    margin-right: 20px;
+    width: 240px; /* Adjust the width */
+    height: 240px; /* Adjust the height */
+    overflow: hidden; /* Hides any image overflow */
+}
+
+.team-member-image img {
+    width: 100%; /* Ensures the image fills the square container */
+    height: 100%; /* Ensures the image fills the square container */
+    object-fit: cover; /* Keeps the image aspect ratio within the square container */
+}
+
+/* Styles for the team member details */
+.team-member-details {
+    max-width: 600px; /* Adjust the maximum width as needed */
+    margin-left: 20px; 
+}
+
+.team-member-details h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.team-member-details h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.team-member-details p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}

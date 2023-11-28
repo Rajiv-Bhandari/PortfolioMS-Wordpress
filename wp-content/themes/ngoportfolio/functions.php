@@ -232,3 +232,18 @@ function enqueue_our_partner_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_our_partner_styles');
 
+function enqueue_our_team_styles() {
+    if (is_page_template('template-parts/our-team.php')) {	
+        wp_enqueue_style('our-partners-style', get_template_directory_uri() . '/css/our-team.css', array(), '1.0', 'all');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_our_team_styles');
+
+function enqueue_single_our_team_styles() {
+    if (is_singular('our-team')) {	
+        wp_enqueue_style('our-team-style', get_template_directory_uri() . '/css/single-our-team.css', array(), '1.0', 'all');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_single_our_team_styles');
+
+

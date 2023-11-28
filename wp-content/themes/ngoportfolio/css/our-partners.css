@@ -29,3 +29,8 @@
     font-size: 18px; /* Adjust font size for the partner titles */
     margin: 0;
 }
+.heading{
+    padding-left: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
