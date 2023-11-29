@@ -6,40 +6,49 @@
 get_header();
 ?>
 
-<div class="gallery-container">
+<div class="heading">
     <h1>Gallery</h1>
+</div>
 
-    <div class="gallery-images">
+<div class="team-members">
+    <?php
+    $team_query = new WP_Query(array(
+        'post_type' => 'gallery', 
+        'posts_per_page' => -1,
+        'order' => 'ASC',
+        'orderby' => 'date',
+    ));
+
+    if ($team_query->have_posts()) :
+        while ($team_query->have_posts()) :
+            $team_query->the_post();
+    ?>
+    <div class="team-member">
         <?php
-        // Get the current page ID
-        $current_page_id = get_queried_object_id();
+        $image = get_field('image'); 
+        $name = get_field('image_name');    
 
-        // Get the attachments using WP_Query
-        $args = array(
-            'post_type'      => 'attachment',
-            'post_mime_type' => 'image',
-            'post_parent'    => $current_page_id,
-            'posts_per_page' => -1,
-        );
-
-        $attachments = new WP_Query($args);
-
-        if ($attachments->have_posts()) {
-            while ($attachments->have_posts()) {
-                $attachments->the_post();
-                $image_url = wp_get_attachment_image_src(get_the_ID(), 'full');
-                $image_alt = get_post_meta(get_the_ID(), '_wp_attachment_image_alt', true);
-
-                if ($image_url) {
+        if ($image) :
         ?>
-                    <img src="<?php echo esc_url($image_url[0]); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-        <?php
-                }
-            }
-        }
-        wp_reset_postdata();
-        ?>
+            <div class="team-image">
+                <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"></a>
+            </div>
+        <?php endif; ?>
+
+        <div class="team-details">
+            <?php if ($name) : ?>
+                <h2><a href="<?php the_permalink(); ?>"><?php echo esc_html($name); ?></a></h2>
+            <?php endif; ?>
+        </div>
     </div>
+
+    <?php
+        endwhile;
+        wp_reset_postdata();
+    else :
+        echo 'No team members found.';
+    endif;
+    ?>
 </div>
 
 <?php get_footer(); ?>

@@ -246,4 +246,11 @@ function enqueue_single_our_team_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_single_our_team_styles');
 
-
+function enqueue_gallery_styles() {
+    // Check if the current page uses the 'our-partners.php' template
+    if (is_page_template('template-parts/gallery.php')) {	
+        // Enqueue the CSS file for 'our-partners.php' template
+        wp_enqueue_style('our-partners-style', get_template_directory_uri() . '/css/gallery.css', array(), '1.0', 'all');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_gallery_styles');

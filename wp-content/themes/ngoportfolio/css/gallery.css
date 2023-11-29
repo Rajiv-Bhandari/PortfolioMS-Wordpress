@@ -1,0 +1,47 @@
+.heading{
+    padding-left: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.team-members {
+    max-width: 85%; 
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between team members */
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.33% - 20px); /* Adjust width to fit three items in a row with gap */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+.team-member img {
+    width: 150px; /* Set width for the image */
+    height: 150px; /* Set height for the image */
+    border-radius: 50%; /* Rounds the image for a circular look */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
+    margin-bottom: 20px; /* Adjust spacing between image and text */
+}
+
+.team-details {
+    text-align: center;
+}
+
+.team-details h2 {
+    margin-bottom: 10px; /* Adjust spacing between name and description */
+}
+
+.team-details p {
+    margin: 0; /* Remove default margins */
+    overflow: hidden; /* Prevents long descriptions from overflowing */
+    text-overflow: ellipsis; /* Truncate long descriptions with ellipsis */
+    white-space: nowrap; /* Prevents text wrapping */
+}
