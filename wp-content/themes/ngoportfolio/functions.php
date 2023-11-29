@@ -254,3 +254,12 @@ function enqueue_gallery_styles() {
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_gallery_styles');
+
+function enqueue_single_gallery_styles() {
+    // Enqueue single-gallery.css for the single-gallery.php template
+    if (is_singular('gallery')) {
+        wp_enqueue_style('single-gallery-style', get_template_directory_uri() . '/css/single-gallery.css', array(), '1.0', 'all');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_single_gallery_styles');
+

@@ -1,0 +1,29 @@
+/* Gallery container */
+.single-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.gallery-content{
+    width: 90%;
+    margin: 0 auto;
+}
+/* Individual image in the gallery */
+.gallery-item {
+    width: calc(33.33% - 10px); /* Adjust width based on your layout */
+    margin-bottom: 20px; /* Adjust margin as needed */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Optional: Add border radius */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow effect */
+}
+.heading{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

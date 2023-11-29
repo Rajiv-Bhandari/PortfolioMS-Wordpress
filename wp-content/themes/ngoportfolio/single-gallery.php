@@ -9,8 +9,10 @@ get_header();
         the_post();
     ?>
         <div class="gallery-content">
-            <h2><?php the_title(); ?></h2>
-            <div class="gallery-description">
+            <div class="heading">
+                <h2><?php the_title(); ?></h2>
+            </div>
+            <div class="gallery">
                 <?php the_content(); ?>
             </div>
         </div>
