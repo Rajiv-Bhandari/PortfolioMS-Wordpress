@@ -9,6 +9,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px; /* Adjust the gap between team members */
+    margin-bottom: 40px;
 }
 
 .team-member {

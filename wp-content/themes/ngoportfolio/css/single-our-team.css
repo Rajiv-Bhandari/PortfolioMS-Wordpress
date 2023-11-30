@@ -9,8 +9,8 @@
 /* Styles for the team member image */
 .team-member-image {
     margin-right: 20px;
-    width: 240px; /* Adjust the width */
-    height: 240px; /* Adjust the height */
+    width: 340px; /* Adjust the width */
+    height: 340px; /* Adjust the height */
     overflow: hidden; /* Hides any image overflow */
 }
 

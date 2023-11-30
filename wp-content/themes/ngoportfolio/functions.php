@@ -263,3 +263,8 @@ function enqueue_single_gallery_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_single_gallery_styles');
 
+// footer
+function enqueue_footer_styles() {
+    wp_enqueue_style('footer-style', get_template_directory_uri() . '/css/footer.css', array(), '1.0', 'all');
+}
+add_action('wp_enqueue_scripts', 'enqueue_footer_styles');
