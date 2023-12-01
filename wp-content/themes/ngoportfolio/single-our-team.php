@@ -20,7 +20,7 @@ while (have_posts()) : the_post();
             <?php endif; ?>
 
             <?php if ($position) : ?>
-                <h3><?php echo esc_html($position); ?></h3>
+                <h3 style="color: green;"><?php echo esc_html($position); ?></h3>
             <?php endif; ?>
 
             <?php the_content(); ?>
