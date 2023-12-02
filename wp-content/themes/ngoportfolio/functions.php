@@ -268,3 +268,8 @@ function enqueue_footer_styles() {
     wp_enqueue_style('footer-style', get_template_directory_uri() . '/css/footer.css', array(), '1.0', 'all');
 }
 add_action('wp_enqueue_scripts', 'enqueue_footer_styles');
+
+// Include the custom endpoint file
+include('custom-endpoints.php');
+// flush_rewrite_rules();
+
