@@ -200,4 +200,34 @@ function get_gallery_data($request) {
     return new WP_REST_Response($gallery_data, 200);
 }
 
+// Custom REST API endpoint to fetch 'Our Team' post details
+function custom_our_team_details_endpoint() {
+    register_rest_route('custom/v1', '/our-team/(?P<id>\d+)', array(
+        'methods' => 'GET',
+        'callback' => 'get_our_team_details',
+    ));
+}
+add_action('rest_api_init', 'custom_our_team_details_endpoint');
+
+// Callback function to retrieve 'Our Team' post details
+function get_our_team_details($request) {
+    $post_id = $request['id']; // Get the ID from the request parameter
+
+    // Example: Retrieve specific custom fields or content for 'Our Team' post type
+    $title_aboutus = get_field('name', $post_id); // Get custom field 'title_aboutus'
+    $description_aboutus = get_field('description', $post_id); // Get custom field 'description_aboutus'
+    $position = get_field('position',$post_id);
+
+    // Construct the response data
+    $team_details = array(
+        'ID' => $post_id,
+        'Name' => $title_aboutus,
+        'Position' => $position,
+        'Description' => $description_aboutus
+    );
+
+    return new WP_REST_Response($team_details, 200);
+}
+
+
 ?>
