@@ -21,8 +21,8 @@ function get_about_us_data($request) {
     $body_aboutus = get_field('body_aboutus', $about_us->ID); // Fetch 'body_aboutus' custom field
     
     $data = array(
-        'title_aboutus' => $title_aboutus,
-        'body_aboutus' => $body_aboutus,
+        'Title' => $title_aboutus,
+        'Description' => $body_aboutus,
     );
 
     return new WP_REST_Response($data, 200);
@@ -229,5 +229,69 @@ function get_our_team_details($request) {
     return new WP_REST_Response($team_details, 200);
 }
 
+// Custom REST API endpoint for single Gallery post
+function custom_gallery_post_endpoint() {
+    register_rest_route('custom/v1', '/gallery/(?P<id>\d+)', array(
+        'methods' => 'GET',
+        'callback' => 'get_gallery_post_details',
+    ));
+}
+add_action('rest_api_init', 'custom_gallery_post_endpoint');
+
+// Callback function to retrieve single Gallery post details
+function get_gallery_post_details($request) {
+    $post_id = $request['id']; // Get the ID from the request parameter
+
+    // Get post title and content
+    $post = get_post($post_id);
+    $title = $post->post_title;
+    $content = apply_filters('the_content', $post->post_content);
+
+    // Construct the response data
+    $gallery_post_details = array(
+        'ID' => $post_id,
+        'title' => $title,
+        'content' => $content,
+        // You can add more fields here if needed
+    );
+
+    return new WP_REST_Response($gallery_post_details, 200);
+}
+
+// Custom REST API endpoint to update 'About Us' ACF fields individually
+function custom_update_about_us_endpoint() {
+    register_rest_route('custom/v1', '/about-us/update', array(
+        'methods' => 'POST',
+        'callback' => 'update_about_us_content',
+        'permission_callback' => function () {
+            return true; // Temporarily set to true for testing
+        },
+    ));
+}
+add_action('rest_api_init', 'custom_update_about_us_endpoint');
+
+// Callback function to handle updating 'About Us' ACF fields individually
+function update_about_us_content($request) {
+    $about_us_post = get_page_by_path('about-us', OBJECT, 'page'); // Get 'About Us' page by slug
+
+    if (!$about_us_post) {
+        return new WP_Error('no_data', 'About Us page not found', array('status' => 404));
+    }
+
+    // Extract updated field values from the request body
+    $params = $request->get_params();
+
+    // Check if the updated fields exist in the request
+    if (isset($params['title_aboutus'])) {
+        update_field('title_aboutus', $params['title_aboutus'], $about_us_post->ID);
+    }
+
+    if (isset($params['body_aboutus'])) {
+        update_field('body_aboutus', $params['body_aboutus'], $about_us_post->ID);
+    }
+
+    // Provide a response indicating success
+    return new WP_REST_Response('About Us ACF fields updated successfully', 200);
+}
 
 ?>
