@@ -294,4 +294,49 @@ function update_about_us_content($request) {
     return new WP_REST_Response('About Us ACF fields updated successfully', 200);
 }
 
+// Custom REST API endpoint to update 'Our Team' post ACF fields
+function custom_update_our_team_endpoint() {
+    register_rest_route('custom/v1', '/our-team/update/(?P<id>\d+)', array(
+        'methods' => 'POST',
+        'callback' => 'update_our_team_fields',
+        'permission_callback' => function () {
+            return true;
+        },
+    ));
+}
+add_action('rest_api_init', 'custom_update_our_team_endpoint');
+
+// Callback function to handle updating 'Our Team' post ACF fields
+function update_our_team_fields($request) {
+    $post_id = $request['id']; // Get the post ID from the request parameter
+
+    // Check if the post exists
+    if (!get_post($post_id) || get_post_type($post_id) !== 'our-team') {
+        return new WP_Error('invalid_post', 'Invalid post ID', array('status' => 404));
+    }
+
+    // Extract updated field values from the request body
+    $params = $request->get_params();
+
+    // Update ACF fields for 'Our Team' post type
+    if (isset($params['name'])) {
+        update_field('name', $params['name'], $post_id);
+    }
+
+    if (isset($params['description'])) {
+        update_field('description', $params['description'], $post_id);
+    }
+
+    if (isset($params['image'])) {
+        update_field('image', $params['image'], $post_id);
+    }
+
+    if (isset($params['position'])) {
+        update_field('position', $params['position'], $post_id);
+    }
+
+    // Provide a response indicating success
+    return new WP_REST_Response('Our Team ACF fields updated successfully', 200);
+}
+
 ?>
