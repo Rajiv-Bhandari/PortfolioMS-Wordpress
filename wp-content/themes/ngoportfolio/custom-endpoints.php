@@ -461,8 +461,6 @@ function update_our_works_fields($request) {
     return new WP_REST_Response('Our Works ACF fields updated successfully', 200);
 }
 
-
-
 // Custom REST API endpoint to create a new 'Our Team' post
 function custom_create_our_team_endpoint() {
     register_rest_route('custom/v1', '/our-team/create', array(
@@ -475,43 +473,42 @@ function custom_create_our_team_endpoint() {
 }
 add_action('rest_api_init', 'custom_create_our_team_endpoint');
 
-// Callback function to handle creating 'Our Team' post
 function create_our_team_post($request) {
     $params = $request->get_params();
 
     // Extract data from the request body
-    $image = ''; // Initialize the variable to store the image data
-
-    if (isset($_FILES['image'])) {
-        $file = $_FILES['image'];
-        $image_data = file_get_contents($file['tmp_name']);
-        
-        if ($image_data !== false) {
-            $base64_image = base64_encode($image_data);
-            $image = 'data:image/' . pathinfo($file['name'], PATHINFO_EXTENSION) . ';base64,' . $base64_image;
-        }
-    }
+    $image = ''; // Initialize the variable to store the image URL
 
     // Create a new 'Our Team' post
     $post_id = wp_insert_post(array(
         'post_type' => 'our-team', // Adjust post type if needed
         'post_status' => 'publish', // Set post status
+        'post_title' => $params['name'],
     ));
 
     if ($post_id) {
-        // Update ACF fields for the newly created post
-        update_field('image', $image, $post_id);
-        update_field('name', $params['name'], $post_id);
-        update_field('description', $params['description'], $post_id);
-        update_field('position', $params['position'], $post_id);
+        // Update other post meta fields first
+        update_post_meta($post_id, 'name', $params['name']);
+        update_post_meta($post_id, 'description', $params['description']);
+        update_post_meta($post_id, 'position', $params['position']);
         // Add other ACF fields as needed
+
+        if (isset($_FILES['image'])) {
+            $file = $_FILES['image'];
+            $upload = wp_upload_bits($file['name'], null, file_get_contents($file['tmp_name']));
+
+            if (!$upload['error']) {
+                $image = $upload['url'];
+                // Update the image field after post creation
+                update_field('image', $image, $post_id); // Store the image URL in the 'image' ACF field
+            }
+        }
 
         return new WP_REST_Response('Our Team post created successfully with ID: ' . $post_id, 200);
     } else {
         return new WP_Error('failed', 'Failed to create Our Team post', array('status' => 500));
     }
 }
-
 
 
 
