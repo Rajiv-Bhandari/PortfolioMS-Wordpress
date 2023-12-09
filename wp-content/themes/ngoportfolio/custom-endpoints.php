@@ -537,4 +537,81 @@ function delete_our_team_post($request) {
     return new WP_REST_Response('Our Team post deleted successfully', 200);
 }
 
+
+
+// Custom REST API endpoint to delete 'Our Partner' post
+function custom_delete_our_partner_endpoint() {
+    register_rest_route('custom/v1', '/our-partner/delete/(?P<id>\d+)', array(
+        'methods' => 'DELETE',
+        'callback' => 'delete_our_partner_post',
+        'permission_callback' => function () {
+            return true;
+        },
+    ));
+}
+add_action('rest_api_init', 'custom_delete_our_partner_endpoint');
+
+// Callback function to handle deleting 'Our Partner' post
+function delete_our_partner_post($request) {
+    $post_id = $request['id']; // Get the post ID from the request parameter
+
+   
+    if (!get_post($post_id) || get_post_type($post_id) !== 'our-partner') {
+        return new WP_Error('invalid_post', 'Invalid post ID', array('status' => 404));
+    }
+
+    wp_delete_post($post_id, true); 
+    return new WP_REST_Response('Our Partner post deleted successfully', 200);
+}
+
+// Custom REST API endpoint to delete 'Gallery' post
+function custom_delete_gallery_endpoint() {
+    register_rest_route('custom/v1', '/gallery/delete/(?P<id>\d+)', array(
+        'methods' => 'DELETE',
+        'callback' => 'delete_gallery_post',
+        'permission_callback' => function () {
+            return true;
+        },
+    ));
+}
+add_action('rest_api_init', 'custom_delete_gallery_endpoint');
+
+// Callback function to handle deleting 'Gallery' post
+function delete_gallery_post($request) {
+    $post_id = $request['id']; // Get the post ID from the request parameter
+
+   
+    if (!get_post($post_id) || get_post_type($post_id) !== 'gallery') {
+        return new WP_Error('invalid_post', 'Invalid post ID', array('status' => 404));
+    }
+
+    wp_delete_post($post_id, true); 
+    return new WP_REST_Response('Gallery post deleted successfully', 200);
+}
+
+
+// Custom REST API endpoint to delete 'Our Works' post
+function custom_delete_our_works_endpoint() {
+    register_rest_route('custom/v1', '/our-works/delete/(?P<id>\d+)', array(
+        'methods' => 'DELETE',
+        'callback' => 'delete_our_works_post',
+        'permission_callback' => function () {
+            return true;
+        },
+    ));
+}
+add_action('rest_api_init', 'custom_delete_our_works_endpoint');
+
+// Callback function to handle deleting 'Our Works' post
+function delete_our_works_post($request) {
+    $post_id = $request['id']; // Get the post ID from the request parameter
+
+   
+    if (!get_post($post_id) || get_post_type($post_id) !== 'our-work') {
+        return new WP_Error('invalid_post', 'Invalid post ID', array('status' => 404));
+    }
+
+    wp_delete_post($post_id, true); 
+    return new WP_REST_Response('Our Works post deleted successfully', 200);
+}
 ?>
