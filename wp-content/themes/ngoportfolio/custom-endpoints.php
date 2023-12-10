@@ -614,4 +614,42 @@ function delete_our_works_post($request) {
     wp_delete_post($post_id, true); 
     return new WP_REST_Response('Our Works post deleted successfully', 200);
 }
+
+// Custom REST API endpoint to create a new 'Our Partner' post
+function custom_create_our_partner_endpoint() {
+    register_rest_route('custom/v1', '/our-partner/create', array(
+        'methods' => 'POST',
+        'callback' => 'create_our_partner_post',
+        'permission_callback' => function () {
+            return true; // Adjust permission callback as needed
+        },
+    ));
+}
+add_action('rest_api_init', 'custom_create_our_partner_endpoint');
+
+// Callback function to handle creating 'Our Partner' post
+function create_our_partner_post($request) {
+    $params = $request->get_params();
+
+    // Extract data from the request body
+    $title = $params['title']; // Get the title from the request body
+    $image_url = $params['image']; // Get the image URL from the request body
+
+    // Create a new 'Our Partner' post
+    $post_id = wp_insert_post(array(
+        'post_type' => 'our-partner', // Set the custom post type
+        'post_status' => 'publish', // Set post status
+        'post_title' => $title, // Set the post title
+    ));
+
+    if ($post_id) {
+        // Update ACF fields for the newly created post
+        update_field('image', $image_url, $post_id); // Store the image URL in the 'image' ACF field
+
+        return new WP_REST_Response('Our Partner post created successfully with ID: ' . $post_id, 200);
+    } else {
+        return new WP_Error('failed', 'Failed to create Our Partner post', array('status' => 500));
+    }
+}
+
 ?>
