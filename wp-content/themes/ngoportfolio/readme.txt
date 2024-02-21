@@ -1,39 +1,50 @@
-=== ngoPortfolio ===
-
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-Requires at least: 4.5
-Tested up to: 5.4
-Requires PHP: 5.6
+=== Portfolio Management System ===
+Contributors: (your-contributors)
+Tags: custom-theme, portfolio, WordPress
+Requires at least: 5.0
+Tested up to: 5.9
 Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-
-A starter theme called ngoPortfolio.
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Description
+Welcome to Ngo Nepal, where our WordPress custom-themed website stands as a dynamic hub for fostering positive change in Nepalese communities. Our innovative platform incorporates custom fields, enabling vibrant displays of our initiatives in education, healthcare, and environmental sustainability. With seamlessly integrated API functionalities for post management, including creation, updates, views, and deletions, our website ensures a fluid experience for administrators. Through our custom pages and an intuitive admin panel, we've crafted a dynamic, user-friendly system where every aspect of the page is configurable. This dynamic environment empowers us to vividly showcase impactful stories, fostering resilience, hope, and progress in Nepal. Join us on this transformative journey as we commit to making a lasting and meaningful difference.
 
-== Installation ==
+== Screenshots ==
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+### Home Page
 
-== Frequently Asked Questions ==
+![Home Page](path/to/themes/ngoportfolio/PMS-SS/home.png)
 
-= Does this theme support any plugins? =
+![Home Page](path/to/themes/ngoportfolio/PMS-SS/home1.png)
 
-ngoPortfolio includes support for WooCommerce and for Infinite Scroll in Jetpack.
+![Home Page](path/to/themes/ngoportfolio/PMS-SS/home2.png)
 
-== Changelog ==
+![Home Page](path/to/themes/ngoportfolio/PMS-SS/home3.png)
 
-= 1.0 - May 12 2015 =
-* Initial release
+![Home Page](path/to/themes/ngoportfolio/PMS-SS/home4.png)
 
-== Credits ==
+### About Us
 
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+![About Us](path/to/themes/ngoportfolio/PMS-SS/aboutus.png)
+
+### Our Works
+
+![Our Works](path/to/themes/ngoportfolio/PMS-SS/ourworks.png)
+
+### Gallery
+
+![Gallery](path/to/themes/ngoportfolio/PMS-SS/gallery.png)
+
+### Our Partners
+
+![Our Partners](path/to/themes/ngoportfolio/PMS-SS/partners.png)
+
+### Our Team
+
+![Our Team](path/to/themes/ngoportfolio/PMS-SS/ourteam.png)
+
+### Contact Us
+
+![Contact Us](path/to/themes/ngoportfolio/PMS-SS/contactus.png)
