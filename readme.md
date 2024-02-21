@@ -7,40 +7,40 @@ Welcome to Ngo Nepal, a WordPress custom-themed website serving as a dynamic hub
 ### Home Page
 
 1. **Home Page**
-   ![Home Page](themes/ngoportfolio/screenshot-1.png)
+   ![Home Page](wp-content/images/screenshot-1.png)
 2. **Home Page Variation 1**
-   ![Home Page Variation 1](themes/ngoportfolio/screenshot-2.png)
+   ![Home Page Variation 1](wp-content/images/screenshot-2.png)
 3. **Home Page Variation 2**
-   ![Home Page Variation 2](themes/ngoportfolio/screenshot-3.png)
+   ![Home Page Variation 2](wp-content/images/screenshot-3.png)
 4. **Home Page Variation 3**
-   ![Home Page Variation 3](themes/ngoportfolio/screenshot-4.png)
+   ![Home Page Variation 3](wp-content/images/screenshot-4.png)
 5. **Home Page Variation 4**
-   ![Home Page Variation 4](themes/ngoportfolio/screenshot-5.png)
+   ![Home Page Variation 4](wp-content/images/screenshot-5.png)
 
 ### About Us
 
-![About Us](themes/ngoportfolio/screenshot-6.png)
+![About Us](wp-content/images/screenshot-6.png)
 
 ### Our Works
 
-![Our Works](themes/ngoportfolio/screenshot-7.png)
+![Our Works](wp-content/images/screenshot-7.png)
 
 ### Gallery
 
-![Gallery](themes/ngoportfolio/screenshot-8.png)
+![Gallery](wp-content/images/screenshot-8.png)
 
 ### Our Partners
 
-![Our Partners](themes/ngoportfolio/screenshot-9.png)
+![Our Partners](wp-content/images/screenshot-9.png)
 
 ### Our Team
 
-![Our Team](themes/ngoportfolio/screenshot-10.png)
+![Our Team](wp-content/images/screenshot-10.png)
 
 ### Contact Us
 
-![Contact Us](themes/ngoportfolio/screenshot-11.png)
+![Contact Us](wp-content/images/screenshot-11.png)
 
 ### Donate
 
-![Donate](themes/ngoportfolio/screenshot-12.png)
+![Donate](wp-content/images/screenshot-12.png)
