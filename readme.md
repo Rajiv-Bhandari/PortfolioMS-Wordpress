@@ -25,9 +25,15 @@ Welcome to Ngo Nepal, a WordPress custom-themed website serving as a dynamic hub
 
 ![Our Works](wp-content/images/screenshot-7.png)
 
+1. **Details Page**
+   ![Details Page](wp-content/images/our-works-details.png)
+
 ### Gallery
 
 ![Gallery](wp-content/images/screenshot-8.png)
+
+1. **Details page**
+   ![Details Page](wp-content/images/gallery-details.png)
 
 ### Our Partners
 
@@ -36,6 +42,9 @@ Welcome to Ngo Nepal, a WordPress custom-themed website serving as a dynamic hub
 ### Our Team
 
 ![Our Team](wp-content/images/screenshot-10.png)
+
+1. **Details Page**
+   ![details Page](wp-content/images/ourteam-details.png)
 
 ### Contact Us
 
